@@ -10,17 +10,14 @@ defmodule DungeonCrawl.CLI.HeroChoice do
 
     find_hero_by_index = &Enum.at(heroes, &1)
 
-    show_choice = &(Shell.info "Your choice: #{Map.get(&1, :name)}")
-
     heroes
-    |> Enum.map(&(&1.name))
     |> display_options
     |> generate_question
     |> Shell.prompt
     |> parse_answer
     |> find_hero_by_index.()
     |> confirm_hero
-    |> show_choice.()
+    |> show_choice
 
   end
 
