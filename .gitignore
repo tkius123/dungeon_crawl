@@ -24,3 +24,7 @@ dungeon_crawl-*.tar
 
 # Temporary files, for example, from tests.
 /tmp/
+
+.vscode/
+
+.idea/
