@@ -7,4 +7,8 @@ defmodule DungeonCrawl.Character do
     attack_description: nil,
     damage_range: nil
   )
+
+  defimpl String.Chars do
+    def to_string(character), do: character.name
+  end
 end

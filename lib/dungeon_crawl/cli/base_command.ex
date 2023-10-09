@@ -5,7 +5,7 @@ defmodule DungeonCrawl.CLI.BaseCommands do
     options
     |> Enum.with_index(1)
     |> Enum.each(fn {option, index} ->
-        Shell.info("#{index} - #{DungeonCrawl.Display.info(option)}")
+        Shell.info("#{index} - #{option}")
       end)
     options
   end
@@ -21,6 +21,6 @@ defmodule DungeonCrawl.CLI.BaseCommands do
   end
 
   def show_choice(choice) do
-    Shell.info "Your choice: #{DungeonCrawl.Display.info(choice)}"
+    Shell.info "Your choice: #{choice}"
   end
 end
