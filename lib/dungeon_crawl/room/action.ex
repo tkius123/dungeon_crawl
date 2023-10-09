@@ -9,4 +9,6 @@ defmodule DungeonCrawl.Room.Action do
   defimpl String.Chars do
     def to_string(action), do: action.label
   end
+
+  @type t :: %Action{id: atom, label: String.t}
 end
