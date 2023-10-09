@@ -22,5 +22,6 @@ defmodule DungeonCrawl.CLI.BaseCommands do
 
   def show_choice(choice) do
     Shell.info "Your choice: #{choice}"
+    choice
   end
 end
