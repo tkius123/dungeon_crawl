@@ -46,7 +46,7 @@ defmodule DungeonCrawl.Battle do
   end
 
   defp receive_message(character, damage) do
-    "#{character.name} receives #{damage}." <>
+    "#{character.name} receives #{damage}. " <>
     "Current HP: #{character.hit_points}."
   end
 end
