@@ -6,6 +6,10 @@ defmodule DungeonCrawl.Room do
 
   defstruct description: nil, actions: [], trigger: nil
 
+  defimpl String.Chars do
+    def to_string(room), do: room.description
+  end
+
   def all, do: [
     %Room{
       description: "You found a quiet place. Looks safe for a little nap.",
