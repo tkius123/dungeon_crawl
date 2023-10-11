@@ -28,7 +28,7 @@ defmodule DungeonCrawl.CLI.BaseCommands do
   end
 
   def display_invalid_option do
-    Shell.cmd("cls")
+    Shell.cmd("clear")
     Shell.error("Invalid option.")
     Shell.prompt("Press Enter to try again")
     Shell.cmd("clear")
@@ -37,8 +37,13 @@ defmodule DungeonCrawl.CLI.BaseCommands do
   def ask_for_option(options) do
     index = ask_for_index(options)
     chosen_option = Enum.at(options, index)
-    chosen_option
-      || (display_invalid_option() && ask_for_option(options))
+    if chosen_option do
+      chosen_option
+    else
+      display_invalid_option()
+      ask_for_option(options)
+    end
+
   end
 
   def generate_question(options) do
@@ -52,7 +57,7 @@ defmodule DungeonCrawl.CLI.BaseCommands do
   end
 
   def confirm_choice(choice) do
-    Shell.cmd("cls")
+    Shell.cmd("clear")
     Shell.info(choice.description)
     if Shell.yes?("Confirm?"), do: choice, else: :no
   end
