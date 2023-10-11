@@ -3,7 +3,7 @@ defmodule DungeonCrawl.CLI.HeroChoice do
   import DungeonCrawl.CLI.BaseCommands
 
   def start do
-    Shell.cmd("cls")
+    Shell.cmd("clear")
     Shell.info("Start by choosing your hero:")
 
     choice =

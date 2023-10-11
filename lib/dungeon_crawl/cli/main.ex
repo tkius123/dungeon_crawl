@@ -9,7 +9,7 @@ defmodule DungeonCrawl.CLI.Main do
 
   defp crawl(%{hit_points: 0}, _) do
     Shell.prompt("")
-    Shell.cmd("cls")
+    Shell.cmd("clear")
     Shell.info("Unfortunately your wounds are too many to keep walking.")
     Shell.info("You fall into the floor without strength to carry on.")
     Shell.info("Game over!")
@@ -19,7 +19,7 @@ defmodule DungeonCrawl.CLI.Main do
   defp crawl(character, rooms) do
     Shell.info("You keep moving forward to the next room.")
     Shell.prompt("Press Enter to continue")
-    Shell.cmd("cls")
+    Shell.cmd("clear")
 
     Shell.info(DungeonCrawl.Character.current_stats(character))
 
@@ -42,7 +42,7 @@ defmodule DungeonCrawl.CLI.Main do
   end
 
   defp trigger_action({room, action}, character) do
-    Shell.cmd("cls")
+    Shell.cmd("clear")
     room.trigger.run(character, action)
   end
 
