@@ -40,7 +40,13 @@ defmodule DungeonCrawl.CLI.BaseCommands do
   def ask_for_option(options) do
     index = ask_for_index(options)
     chosen_option = Enum.at(options, index)
-    chosen_option || (display_invalid_option() && ask_for_option(options))
+    if chosen_option do
+      chosen_option
+    else
+      display_invalid_option()
+      ask_for_option(options)
+    end
+
   end
 
   def generate_question(options) do
