@@ -1,4 +1,5 @@
 defprotocol DungeonCrawl.Display do
+  @spec info(t) :: String.t()
   def info(value)
 end
 
